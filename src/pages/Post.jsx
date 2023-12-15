@@ -25,7 +25,8 @@ export default function Post() {
                 console.log('Post component is author', post.userId+' '+(userData.$id ? userData.$id : userData.userData.$id));
                 if (post) {
                     setPost(post);
-                    setIsAuthor(post.userId === (userData.$id ? userData.$id : userData.userData.$id))
+                    // setIsAuthor(post.userId === (userData.$id ? userData.$id : userData.userData.$id))
+                    setIsAuthor(post.userId === userData.$id)
                     // isAuthor = post && userData ? post.userId === userData.$id : false;
                 }
                 else navigate("/");

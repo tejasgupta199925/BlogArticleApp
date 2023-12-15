@@ -12,11 +12,12 @@ const authSlice = createSlice({
         login: (state, action) => {
             console.log('Authslice login method: ', action);
             state.status = true;
-            // state.userData = action.payload.userData;
-            state.userData = action.payload
+            state.userData = action.payload.userData;
+            // state.userData = action.payload
         },
 
         logout: state => {
+            console.log('Authslice logout method: ');
             state.status = false;
             state.userData = null;
         }

@@ -9,6 +9,7 @@ export default function Protected({children, authentication=true}) {
     const authStatus = useSelector(state => state.auth.status)
 
     useEffect(() => {
+        console.log('AuthLayout call ', authentication, authStatus);
         if(authentication && authStatus !== authentication) {
             navigate('/login')
         } 

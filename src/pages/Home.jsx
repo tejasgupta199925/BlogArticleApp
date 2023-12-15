@@ -11,14 +11,18 @@ function Home() {
 
     useEffect(() => {
         console.log('Home Component ', user);
-        appwriteService.getPosts().then(posts => {
-            if(posts) {
-                setPosts(posts.documents)
-            }
-        })
+
+        if(user) {
+            appwriteService.getPosts().then(posts => {
+                if(posts) {
+                    setPosts(posts.documents)
+                }
+            })
+        }
     }, [])
 
-    if(posts.length === 0) {
+    // Possible to hide post from users not logged in
+    if(posts.length === 0 || user === null) {
         return (
             <div className="w-full py-8 mt-4 text-center">
                 <Container>

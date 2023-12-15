@@ -21,7 +21,8 @@ function Signup() {
         console.log('Going to get currentuser ')
         const userData = await authService.getCurrentUser();
         console.log('Signup comp. ', userData)
-        if (userData) dispatch(login(userData));
+        // if (userData) dispatch(login(userData));
+        if (userData) dispatch(login({userData}));
         console.log('Just before navigating sign up')
         navigate("/abc");
       }

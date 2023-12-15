@@ -24,7 +24,8 @@ function Login() {
         console.log('Login Component userdata: ', userData)
         if (userData) {
           console.log('Dispatching to authlogin (inside userdata if) ', userData);
-          dispatch(authLogin(userData));
+          // dispatch(authLogin(userData));
+          dispatch(authLogin({userData}));
           navigate('/abc')
         }
         console.log('After successful dispatching', user)
